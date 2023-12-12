@@ -1,6 +1,6 @@
 @font-face {
   font-family: "Roboto";
-  src: url("fonts/Roboto/Roboto-Regular.ttf") format(truetype);
+  src: url("fonts/Roboto/Roboto-Regular.ttf") format("truetype");
 }
 
 body {
@@ -103,6 +103,7 @@ button {
 .side-bar {
   background-color: rgb(10, 179, 251);
   color: white;
+  grid-column: side-bar-start / side-bar-end;
 }
 
 .side-bar .icon {
@@ -124,4 +125,19 @@ button {
 
 .side-bar-group + .side-bar-group {
   margin-top: 5rem;
+}
+
+.main-area {
+  display: grid;
+  grid-template-columns: [side-bar-start] 1fr [side-bar-end projects-start] 3fr [projects-end notifications-start] 1fr [notifications-end];
+}
+
+.projects {
+  background-color: greenyellow;
+  grid-column: projects-start / projects-end;
+}
+
+.notifications {
+  grid-column: notifications-start / notifications-end;
+  background-color: pink;
 }
