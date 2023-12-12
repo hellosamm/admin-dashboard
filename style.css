@@ -10,14 +10,14 @@ body {
 .search-icon {
   height: 30px;
   width: 30px;
-  background-color: #555;
+  background-color: gold;
   border-radius: 50%;
 }
 
 .search-bar {
   height: 30px;
   width: 500px;
-  background-color: #555;
+  background-color: rgb(225, 224, 224);
   border-radius: 25px;
   margin-left: 1rem;
 }
@@ -25,6 +25,32 @@ body {
 .search {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.icon {
+  height: 30px;
+  width: 30px;
+  background-color: gold;
+  border-radius: 50%;
+  margin: 10px;
+}
+
+#search {
+  display: flex;
+  flex-direction: row;
+}
+
+.group-2,
+.group-1 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.head-1 {
+  margin: 10px;
 }
 
 .head-2 {
@@ -32,21 +58,28 @@ body {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  margin: 10px;
 }
 
 .welcome-name {
   margin-left: 1rem;
 }
 
+.welcome-name p {
+  margin: 0;
+}
+
+.welcome-name p + p {
+  font-size: 1.5rem;
+}
+
 .main-area {
-  border: 1px;
-  border-style: solid;
 }
 
 button {
   font-family: "Roboto", sans-serif;
   display: inline-block;
-  background-color: green;
+  background-color: rgb(10, 179, 251);
   color: white;
   border: none;
   border-radius: 25px;
@@ -60,13 +93,35 @@ button {
   align-items: center;
 }
 
-.side-bar {
-  border: 1px;
-  border-style: solid;
-}
 .img-icon {
   height: 60px;
   width: 60px;
-  background-color: #555;
+  background-color: gold;
   border-radius: 50%;
+}
+
+.side-bar {
+  background-color: rgb(10, 179, 251);
+  color: white;
+}
+
+.side-bar .icon {
+  background-color: white;
+}
+
+.pair {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.header {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 0;
+  padding: 5px;
+}
+
+.side-bar-group + .side-bar-group {
+  margin-top: 5rem;
 }
