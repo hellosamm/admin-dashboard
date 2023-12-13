@@ -17,7 +17,7 @@ body {
 .search-bar {
   height: 30px;
   width: 500px;
-  background-color: rgb(225, 224, 224);
+  background-color: rgb(237, 237, 243);
   border-radius: 25px;
   margin-left: 1rem;
 }
@@ -30,8 +30,8 @@ body {
 }
 
 .icon {
-  height: 30px;
-  width: 30px;
+  height: 20px;
+  width: 20px;
   background-color: gold;
   border-radius: 50%;
   margin: 10px;
@@ -49,8 +49,13 @@ body {
   align-items: center;
 }
 
+.head {
+  margin-left: 25px;
+}
+
 .head-1 {
   margin: 10px;
+  margin-right: 25px;
 }
 
 .head-2 {
@@ -59,6 +64,7 @@ body {
   justify-content: space-between;
   align-items: center;
   margin: 10px;
+  margin-top: 20px;
 }
 
 .welcome-name {
@@ -74,6 +80,11 @@ body {
 }
 
 .main-area {
+  grid-area: main-area;
+  display: grid;
+  grid-template-columns: [projects-start] 75% [projects-end notifications-start] 25% [notifications-end];
+  grid-template-rows: [header-start] 5% [projects-start notifications-start header-end announcement-start] 1fr [announcement-start projects-end notifications-end];
+  background-color: rgb(237, 237, 243);
 }
 
 button {
@@ -83,8 +94,9 @@ button {
   color: white;
   border: none;
   border-radius: 25px;
-  padding: 10px 30px;
-  font-size: 1rem;
+  padding: 8px 30px;
+  font-size: 0.9rem;
+  margin: 1rem;
 }
 
 .welcome {
@@ -104,6 +116,8 @@ button {
   background-color: rgb(10, 179, 251);
   color: white;
   grid-column: side-bar-start / side-bar-end;
+  grid-area: side-bar;
+  padding: 10px;
 }
 
 .side-bar .icon {
@@ -121,19 +135,21 @@ button {
   font-weight: bold;
   margin: 0;
   padding: 5px;
+  grid-area: header;
+  margin-bottom: 2rem;
 }
 
 .side-bar-group + .side-bar-group {
   margin-top: 5rem;
 }
 
-.main-area {
+.container {
   display: grid;
-  grid-template-columns: [side-bar-start] 1fr [side-bar-end projects-start] 3fr [projects-end notifications-start] 1fr [notifications-end];
+  grid-template-columns: [side-bar-start] 1fr [side-bar-end head-start main-area-start] 4fr [head-end main-area-end];
+  grid-template-rows: [head-start side-bar-start] 1fr [head-end main-area-start] 5fr [side-bar-end main-area-end];
 }
 
 .projects {
-  background-color: greenyellow;
   grid-column: projects-start / projects-end;
 }
 
@@ -141,3 +157,51 @@ button {
   grid-column: notifications-start / notifications-end;
   background-color: pink;
 }
+
+.card {
+  background-color: white;
+  padding: 20px;
+  margin: 15px;
+  padding: 40px 30px;
+  border-radius: 10px;
+}
+
+.projects {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-area: projects;
+}
+
+.post-title {
+  margin: 0;
+  margin-bottom: 10px;
+  font-size: 1rem;
+  font-weight: bolder;
+}
+
+.post-content {
+  margin: 0;
+  font-size: 0.85rem;
+  color: grey;
+}
+
+.card .icon {
+  border: 1px;
+  border-style: solid;
+  background-color: white;
+  display: flex;
+  margin: 10px;
+}
+
+.row {
+  display: flex;
+  flex-direction: row-reverse;
+  margin-top: 15px;
+}
+
+.projet-header {
+  grid-area: header;
+}
+
+/* add css to announcement section for a header using grid-area: announcement */
