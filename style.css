@@ -83,7 +83,7 @@ body {
   grid-area: main-area;
   display: grid;
   grid-template-columns: [projects-start header-start] 75% [projects-end header-end notifications-start] 25% [notifications-end];
-  grid-template-rows: [header-start announcement-start] 5% [header-end announcement-end projects-start notifications-start] 1fr [projects-end notifications-end];
+  grid-template-rows: [header-start notifications-start] 5% [header-end projects-start] 1fr [projects-end notifications-end];
   background-color: rgb(237, 237, 243);
 }
 
@@ -154,15 +154,16 @@ button {
 }
 
 .notifications {
-  grid-column: notifications-start / notifications-end;
-  background-color: pink;
+  grid-area: notifications;
+  background-color: rgb(237, 237, 243);
+  padding: 10px;
 }
 
 .card {
   background-color: white;
   padding: 20px;
   margin: 15px;
-  padding: 40px 30px;
+  padding: 40px 30px 10px 30px;
   border-radius: 10px;
 }
 
@@ -197,17 +198,36 @@ button {
 .row {
   display: flex;
   flex-direction: row-reverse;
-  margin-top: 15px;
+  margin-top: 30px;
 }
 
-.project-header {
+.project-header,
+.announcement-header {
   grid-area: header;
   font-size: 1.1rem;
   margin: 0px;
 }
 
 .project-header p {
-  margin: 10px;
+  margin: 15px;
+  margin-bottom: 0;
 }
 
-/* add css to announcement section for a header using grid-area: announcement */
+.announcement-header {
+  grid-area: notifications;
+}
+
+.announcement-header p {
+  margin: 0;
+}
+
+.announcement-card {
+  background-color: white;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.announcement-card p + p {
+  font-size: 0.75rem;
+  color: grey;
+}
